@@ -1,4 +1,3 @@
-import { log } from "node:console";
 import { renderWeatherCard } from "./dom.js";
 
 export function setupSearchEvents() {
@@ -14,15 +13,8 @@ export function setupSearchEvents() {
                     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${apiKey}`,
                 );
                 const data = await response.json();
-                const { address: name,currentConditions: {temp,humidity}, description: desc } = data
-                console.log(name)
-                console.log(temp);
-                console.log(humidity);
-                console.log(desc);
                 
-                
-                
-                // renderWeatherCard()
+                renderWeatherCard(data)
             }
     }
 
