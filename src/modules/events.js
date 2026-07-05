@@ -1,21 +1,28 @@
-import { renderWeatherCard } from "./dom.js";
+import { renderHttpError, renderWeatherCard } from "./dom.js";
 
 export function setupSearchEvents() {
     const errorMsg = document.querySelector(".error");
     const search = document.getElementById("search");
     const form = document.querySelector("form");
-    
+
     async function searchWeather() {
+        try {
             const city = search.value;
             const apiKey = "N6PPRCK232CD68VDU7Z6CMCBC";
             if (city.length >= 1) {
                 const response = await fetch(
                     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${apiKey}`,
                 );
+                if (!response.ok) {
+                    renderHttpError(response);
+                    return;
+                }
                 const data = await response.json();
-                
-                renderWeatherCard(data)
+                renderWeatherCard(data);
             }
+        } catch (error) {
+            console.error(`Error inesperado: ${error}`)
+        }
     }
 
     function showError() {
@@ -32,7 +39,7 @@ export function setupSearchEvents() {
             showError();
             return;
         }
-        searchWeather()
+        searchWeather();
     });
 
     search.addEventListener("input", () => {

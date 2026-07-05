@@ -57,6 +57,7 @@ p * {
     font-weight: bolder;
     box-shadow: 0 2px 2px hsl(0, 0%, 0%, 0.5);
     color: var(--gray);
+    flex: 0;
 }
 
 .submit-btn:hover {
@@ -72,6 +73,22 @@ p * {
     background-color: var(--dark-red);
     color: white;
     border-radius: 0 0 8px 8px;
+}
+
+.http-error {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--dark-red);
+}
+
+.rad-btns {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    align-items: end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .active {
@@ -108,7 +125,8 @@ main>form {
 }
 
 form>p {
-    margin-top: 0;
+    flex: 0;
+    margin-block: 0;
 }
 
 .card {

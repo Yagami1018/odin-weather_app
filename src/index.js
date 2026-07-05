@@ -4,7 +4,6 @@ import {} from "./styles/style.css";
 
 function init() {
     setupSearchEvents();
-    // renderWeatherCard()
 }
 
 document.addEventListener("DOMContentLoaded", init);
