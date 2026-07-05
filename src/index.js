@@ -1,3 +1,5 @@
+import {} from "./style.css";
+
 const form = document.querySelector("form");
 const search = document.getElementById("search");
 const btn = document.querySelector(".submit-btn");
