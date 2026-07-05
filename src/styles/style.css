@@ -13,7 +13,7 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    background-color: hsl(0,0%,95%);
+    background-color: hsl(0, 0%, 95%);
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -84,6 +84,7 @@ header {
 }
 
 main {
+    anchor-name: --main;
     background-color: white;
     border: 1px solid black;
     padding: 20px 50px;
@@ -95,7 +96,7 @@ main {
     position-area: bottom;
     top: 2em;
     border-radius: 20px;
-    box-shadow: 0 10px 30px hsl(0, 0%, 0%,0.5);
+    box-shadow: 0 10px 30px hsl(0, 0%, 0%, 0.5);
 }
 
 main>form {
@@ -105,8 +106,21 @@ main>form {
     justify-content: space-between;
     align-items: center;
 }
-form > p {
+
+form>p {
     margin-top: 0;
+}
+
+.card {
+    position: fixed;
+    position-anchor: --main;
+    position-area: bottom;
+    top: 70px;
+    display: flex;
+    border: 1px solid black;
+    width: 350px;
+    height: 350px;
+    justify-content: center;
 }
 
 footer,
