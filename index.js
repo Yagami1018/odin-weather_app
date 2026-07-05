@@ -13,8 +13,8 @@ function showError() {
 }
 
 form.addEventListener("submit", (e) => {
+    e.preventDefault();
     if (!search.validity.valid) {
-        e.preventDefault();
         showError();
     }
 });
